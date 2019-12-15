@@ -11,4 +11,7 @@ install:
 before_install:
   - sudo apt update -y -q
 
+script:
+  - python ghost_protocol.py
+
 dist: bionic
