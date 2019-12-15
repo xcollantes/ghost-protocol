@@ -1,0 +1,11 @@
+language: python
+
+python:
+  - "2.7"
+  - "3.8"
+  - "nightly"
+
+install:
+  - pip3 install -r requirements.txt
+
+dist: bionic
