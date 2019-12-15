@@ -4,14 +4,32 @@
 import time
 import random
 import pyautogui as g
+import argparse
 
-g.PAUSE = 1
+parser = argparse.ArgumentParser(description='Simulate user at computer.')
+
+parser.add_argument('--windows', dest='window_shift_flag', default=False,
+                    type=bool, metavar='',
+                    help='Add flag to switch between windows.')
+
+parser.add_argument('--pause', dest='pause', default=1,
+                    metavar='',
+                    type=int,
+                    help='Seconds to wait between actions. (default: 1 sec.)')
+
+parser.add_argument('--timer', dest='timer',
+                    metavar='',
+                    type=int, help='Specify seconds for runtime.')
+
+args = parser.parse_args()
+
+g.PAUSE = args.pause
 g.FAILSAFE = True
 
 X_MAX = g.size()[0]
 Y_MAX = g.size()[1]
 
-window_shift = True  # Move mouse or change windows
+window_shift = args.window_shift_flag  # Move mouse or change windows
 
 try:
   while True:
