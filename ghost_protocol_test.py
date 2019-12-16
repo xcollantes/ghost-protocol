@@ -12,7 +12,7 @@ import unittest
 class GhostProtocolTest(unittest.TestCase):
 
   def test_give_me_a_name(self):
-    pass
+    self.assertEqual(1,1)
 
 
 if __name__ == '__main__':

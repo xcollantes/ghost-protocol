@@ -12,6 +12,6 @@ before_install:
   - sudo apt update -y -q
 
 script:
-  - python ghost_protocol.py
+  - python -m unittest -v ghost_protocol_test.py
 
 dist: bionic
